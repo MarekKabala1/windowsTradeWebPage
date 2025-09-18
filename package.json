@@ -1,0 +1,62 @@
+{
+  "name": "windows-trade-webpage",
+  "version": "1.0.0",
+  "description": "Windows Trade Web Page Application",
+  "main": "index.tsx",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "windows trade",
+    "windows installation",
+    "windows service",
+    "windows maintenance",
+    "windows glass",
+    "windows doors",
+    "windows Fittings",
+    "windows repair",
+    "windows replacement",
+    "windows",
+    "doors"
+  ],
+  "author": "Marek Kabala",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react-swc": "^4.0.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "postcss": "^8.5.6",
+    "postcss-nested": "^7.0.2",
+    "postcss-preset-env": "^10.3.1",
+    "prettier": "^3.6.2",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^7.1.2"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ]
+}
