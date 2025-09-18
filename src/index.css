@@ -1,0 +1,165 @@
+:root {
+	--numcards: 4;
+	--card-margin: 2rem;
+	--card-top-offset: 1em;
+	--card-height: 40vh;
+
+	/* Color Variables */
+--primary-blue: rgba(59, 130, 246, 1);
+	--primary-blue-hover: rgba(37, 99, 235, 1);
+	--primary-blue-light: rgba(96, 165, 250, 1);
+
+	/* Light Theme Colors */
+	--background-light: rgba(255, 255, 255, 1);
+	--background-gradient: rgba(217, 229, 254, 1);
+	--text-primary: rgba(64, 61, 61, 0.87);
+	--text-dark: rgba(33, 53, 71, 1);
+	--button-dark: rgba(26, 26, 26, 1);
+	--button-light: rgba(249, 249, 249, 1);
+
+	/* Dark Theme Colors */
+	--background-dark: rgba(15, 23, 42, 1);
+	--background-gradient-dark: rgba(30, 41, 59, 1);
+	--text-light: rgba(248, 250, 252, 0.87);
+	--text-secondary-dark: rgba(203, 213, 225, 0.7);
+	--button-dark-theme: rgba(51, 65, 85, 1);
+	--button-light-theme: rgba(30, 41, 59, 1);
+
+	/* Door Colors */
+	--door-frame: rgba(171, 188, 230, 1);
+	--door-frame-dark: rgba(100, 116, 139, 1);
+	--door-border: rgba(8, 24, 63, 1);
+	--door-border-dark: rgba(148, 163, 184, 1);
+	--door-glass: rgba(88, 171, 205, 0.3);
+	--door-glass-dark: rgba(59, 130, 246, 0.2);
+	--door-dark-glass: rgba(29, 119, 171, 0.3);
+	--door-dark-glass-dark: rgba(37, 99, 235, 0.2);
+	--door-handle: rgba(8, 24, 63, 1);
+	--door-handle-dark: rgba(148, 163, 184, 1);
+
+	/* Glass Effects */
+	--glass-background: rgba(255, 255, 255, 0.3);
+	--glass-background-dark: rgba(51, 65, 85, 0.3);
+	--glass-shadow: rgba(71, 123, 201, 1);
+	--glass-shadow-dark: rgba(59, 130, 246, 1);
+	--glass-card-bg: rgba(167, 191, 231, 1);
+	--glass-card-bg-dark: rgba(51, 65, 85, 0.8);
+	--glass-card-border: rgba(213, 222, 225, 0.2);
+	--glass-card-border-dark: rgba(148, 163, 184, 0.2);
+	--glass-text-shadow: rgba(187, 184, 184, 0.5);
+	--glass-text-shadow-dark: rgba(0, 0, 0, 0.8);
+
+	/* Navigation */
+	--nav-background: rgba(255, 255, 255, 1);
+	--nav-background-dark: rgba(15, 23, 42, 0.5);
+	--nav-accent: rgba(74, 126, 217, 0.2);
+	--nav-accent-dark: rgba(59, 130, 246, 0.3);
+	--nav-text: rgba(33, 53, 71, 1);
+	--nav-text-dark: rgba(203, 213, 225, 1);
+
+	/* Shadows */
+	--shadow-light: rgba(0, 0, 0, 0.5);
+	--shadow-heavy: rgba(0, 0, 0, 0.3);
+	--shadow-inset: rgba(255, 255, 255, 0.1);
+
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: var(--text-primary);
+	background-color: var(--background-gradient);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	 overscroll-behavior: none;
+}
+
+a {
+	font-weight: 500;
+	color: var(--primary-blue);
+	text-decoration: inherit;
+}
+a:hover {
+	color: var(--primary-blue-hover);
+}
+li{
+	list-style: none;
+}
+
+body,
+* {
+	margin: 0;
+	padding: 0;
+	place-items: center;
+	box-sizing: border-box;
+
+
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 1.1;
+	text-wrap: balance;
+}
+
+button {
+	border-radius: 8px;
+	border: 1px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	font-weight: 500;
+	font-family: inherit;
+	background-color: var(--button-dark);
+	cursor: pointer;
+	transition: border-color 0.25s;
+}
+button:hover {
+	border-color: var(--primary-blue);
+}
+button:focus,
+button:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: var(--text-dark);
+		background-color: var(--background-light);
+	}
+	a:hover {
+		color: var(--primary-blue-light);
+	}
+	button {
+		background-color: var(--button-light);
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color: var(--text-light);
+		background-color: var(--background-gradient-dark);
+
+		--door-frame: var(--door-frame-dark);
+		--door-border: var(--door-border-dark);
+		--door-glass: var(--door-glass-dark);
+		--door-dark-glass: var(--door-dark-glass-dark);
+		--door-handle: var(--door-handle-dark);
+
+		--glass-background: var(--glass-background-dark);
+		--glass-shadow: var(--glass-shadow-dark);
+		--glass-card-bg: var(--glass-card-bg-dark);
+		--glass-card-border: var(--glass-card-border-dark);
+		--glass-text-shadow: var(--glass-text-shadow-dark);
+
+		--nav-background: var(--nav-background-dark);
+		--nav-accent: var(--nav-accent-dark);
+		--nav-text: var(--nav-text-dark);
+	}
+
+	button {
+		background-color: var(--button-dark-theme);
+	}
+}
