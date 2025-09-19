@@ -163,3 +163,176 @@ button:focus-visible {
 		background-color: var(--button-dark-theme);
 	}
 }
+
+.app-container {
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 1;
+	position: relative;
+	min-height: 300vh;
+}
+
+.door-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: stretch;
+	z-index: 1000;
+	pointer-events: none;
+}
+.door {
+	height: stretch;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	position: absolute;
+	inset: 0;
+
+	.door-frame {
+		width: 50%;
+		height: stretch;
+		/* border: 8px solid var(--door-frame); */
+		position: relative;
+	}
+	.door-right {
+		border-left: 1px solid var(--door-border);
+		border-radius: 0 10px 10px 0;
+		animation: slideRight linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0px 300px;
+	}
+	.door-left {
+		border-right: 1px solid var(--door-border);
+		border-radius: 10px 0 0 10px;
+		animation: slideLeft linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0px 300px;
+	}
+}
+
+.door-glass {
+	width: 80%;
+	height: stretch;
+	position: absolute;
+	top: 0;
+	background-color: var(--door-glass);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+
+	&.door-glass-left {
+		left: 0;
+	}
+	&.door-glass-right {
+		right: 0;
+	}
+}
+
+.door-dark-glass {
+	width: 20%;
+	height: stretch;
+	background: var(--door-dark-glass);
+	position: absolute;
+	top: 0;
+
+	&.door-dark-glass-left {
+		right: 0;
+	}
+	&.door-dark-glass-right {
+		left: 0;
+	}
+}
+.door-handle {
+	width: 10px;
+	height: 10dvh;
+	background: var(--door-handle);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 10px;
+	z-index: 10;
+
+	&.door-handle-left {
+		right: 5%;
+	}
+	&.door-handle-right {
+		left: 5%;
+	}
+}
+
+.glass-door-background {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	height: 100dvh;
+}
+.glass-door-background_left {
+	padding-left: calc(4vh + 2rem);
+	place-items:center;
+	z-index: 2;
+	width: 80%;
+
+	& h2{
+		font-size: calc(1.5rem + 2vw);
+		text-align: center;
+		margin-bottom: 1rem;
+		text-shadow: 4px 2px 8px var(--glass-text-shadow);
+	}
+	& p{
+		font-size: calc(1rem + 0.5vw);
+		text-align: center;
+	}
+}
+
+.glass-door-background_right {
+	--padding: calc(4vh + 2rem);
+	position: absolute;
+	padding-right: var(--padding);
+	right: 20px;
+  z-index: 1;
+
+	& .square {
+		width: calc(35vw - var(--padding) );
+		max-width: 400px;
+		aspect-ratio: 1 / 1;
+		background: var(--glass-background);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		rotate: 40deg;
+		border-radius: 4vw;
+		box-shadow: 30px -30px 20px -10px var(--glass-shadow);
+
+
+	}
+
+	 @media (max-width: 800px) {
+		& .square{
+			top: 0;
+			right: 50%;
+
+		}
+	}
+}
+
+/*Animations*/
+@keyframes slideLeft {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-40vw);
+	}
+}
+
+@keyframes slideRight {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(40vw);
+	}
+}

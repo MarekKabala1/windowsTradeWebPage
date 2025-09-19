@@ -1,11 +1,14 @@
 import './App.css';
+import Hero from './componets/Hero';
+import SlidingDoor from './componets/slidingDoor';
 // import gardenView from './assets/gardenView.webp';
 
 function App() {
 	return (
-		<div>
-			<h1>Windows Trade Web Page</h1>
-		</div>
+		<main className='app-container'>
+			<SlidingDoor />
+			<Hero />
+		</main>
 	);
 }
 
