@@ -1,13 +1,16 @@
 import './App.css';
-import Hero from './componets/Hero';
-import SlidingDoor from './componets/slidingDoor';
-// import gardenView from './assets/gardenView.webp';
+import Cards from './components/Cards';
+import Hero from './components/Hero';
+import Nav from './components/Nav';
+import SlidingDoor from './components/SlidingDoor';
 
 function App() {
 	return (
 		<main className='app-container'>
 			<SlidingDoor />
 			<Hero />
+			<Cards />
+			<Nav />
 		</main>
 	);
 }
