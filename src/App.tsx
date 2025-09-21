@@ -2,6 +2,7 @@ import './App.css';
 import Cards from './components/Cards';
 import Hero from './components/Hero';
 import Nav from './components/Nav';
+import Services from './components/Services';
 import SlidingDoor from './components/SlidingDoor';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 			<Hero />
 			<Cards />
 			<Nav />
+			<Services />
 		</main>
 	);
 }
