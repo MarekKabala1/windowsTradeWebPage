@@ -4,6 +4,8 @@
   --card-top-offset: 1em;
   --card-height: 40vh;
 
+
+
   /* Color Variables */
   --primary-blue: rgba(59, 130, 246, 1);
   --primary-blue-hover: rgba(37, 99, 235, 1);
@@ -88,12 +90,22 @@ a:hover {
 li {
   list-style: none;
 }
-
 body {
-  scroll-behavior: smooth;
-  min-height: 100vh;
   overflow-x: hidden;
 }
+html,
+body {
+  scroll-behavior: smooth;
+  /* overflow-x: scroll; */
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  width: 100dvw;
+
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -173,23 +185,27 @@ button:focus-visible {
   flex-direction: column;
   position: relative;
   z-index: 1;
-  position: relative;
-  min-height: 600vh;
+  align-items: center;
+
+}
+
+section {
+  width: 75vw;
+
+  text-align: center;
 }
 
 .door-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: stretch;
-  height: 100dvh;
+  width: 100dvw;
+  min-height: 100dvh;
   z-index: 1000;
   pointer-events: none;
 }
 .door {
-  height: stretch;
-  height: 100dvh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,7 +215,7 @@ button:focus-visible {
 
   .door-frame {
     width: 50%;
-    height: stretch;
+
     height: 100dvh;
     /* border: 8px solid var(--door-frame); */
     position: relative;
@@ -209,14 +225,14 @@ button:focus-visible {
     border-radius: 0 10px 10px 0;
     animation: slideRight linear both;
     animation-timeline: scroll(root);
-    animation-range: 0px 300px;
+    animation-range: 0px 150px;
   }
   .door-left {
     border-right: 1px solid var(--door-border);
     border-radius: 10px 0 0 10px;
     animation: slideLeft linear both;
     animation-timeline: scroll(root);
-    animation-range: 0px 300px;
+    animation-range: 0px 150px;
   }
 }
 
@@ -280,7 +296,7 @@ button:focus-visible {
 }
 .glass-door-background_left {
   padding-left: calc(4vh + 2rem);
-  place-items: center;
+text-align: center;
   z-index: 2;
   width: 80%;
 
@@ -293,6 +309,11 @@ button:focus-visible {
   & p {
     font-size: calc(1rem + 0.5vw);
     text-align: center;
+  }
+    @media (max-width: 800px) {
+   &.glass-door-background_left{
+    padding: 0;
+    }
   }
 }
 
@@ -343,10 +364,10 @@ button:focus-visible {
     --reverse-index0: calc(var(--reverse-index) - 1);
   }
 }
-section {
-  width: 75vw;
-  margin: 0 auto;
-  text-align: center;
+
+.cards-container {
+
+  margin-bottom: 4rem;
 }
 .cards-content {
   list-style: none;
@@ -386,6 +407,11 @@ section {
   animation-range: exit-crossing var(--start-range) exit-crossing
     var(--end-range);
   animation-timeline: --cards-scroll;
+
+  & h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.1;
+  }
 
   & p {
     font-size: clamp(0.9rem, 2vw, 1.1rem);
@@ -428,17 +454,20 @@ ul > .cards-content {
   width: 100%;
   height: 100%;
   background-color: var(--nav-accent);
-}
-.nav-links {
+
+ & .nav-links {
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  place-content: center;
   gap: 20px;
   padding: 0 0.5rem;
+  text-align: center;
+}
 }
 .nav-links a {
-  font-size: clamp(1rem, 1vw, 1.2rem);
+  font-size: clamp(0.6rem, 1vw, 1.2rem);
   color: var(--nav-text);
   text-decoration: none;
   border-radius: 8px;
@@ -492,7 +521,7 @@ li {
     aspect-ratio: 1/1;
     border: 10px solid var(--background-light);
     background-color: var(--primary-blue);
-    background: var(--shadow-light) url('../public/MkLogo.png') no-repeat center
+    background: var(--shadow-light) url('./assets/img/MkLogo.png') no-repeat center
       center;
     background-size: cover;
     border-radius: 12px;
@@ -519,7 +548,6 @@ li {
   }
 }
 .section-gallery {
-  height: stretch;
   overflow: scroll;
   /* padding-left: 10vw; */
 }
@@ -538,7 +566,6 @@ li {
 }
 
 .gallery-container {
-  height: stretch;
   height: 100dvh;
   width: 100vw;
   display: flex;
@@ -602,6 +629,7 @@ li {
   }
 }
 
+
 @supports not (animation-timeline: view()) {
   .glass-door-background_left {
     padding-left: 0;
@@ -616,7 +644,7 @@ li {
     width: 100%;
   }
   .section-gallery {
-    height: stretch;
+
     overflow: hidden;
     margin: 0 auto;
     height: auto;
@@ -638,7 +666,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: stretch;
+
     width: 100%;
     border: none;
     animation: none;
@@ -646,7 +674,7 @@ li {
 
   .gallery-item {
     display: flex;
-    height: stretch;
+
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
