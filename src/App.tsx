@@ -1,5 +1,6 @@
 import './App.css';
 import Cards from './components/Cards';
+import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import Hero from './components/Hero';
 import Nav from './components/Nav';
@@ -73,6 +74,7 @@ function App() {
         ipsa deserunt vitae. Itaque consequuntur excepturi iste enim dolore
         veniam ducimus eius, officia maiores mollitia?
       </div>
+      <Footer/>
     </main>
   );
 }

@@ -4,8 +4,6 @@
   --card-top-offset: 1em;
   --card-height: 40vh;
 
-
-
   /* Color Variables */
   --primary-blue: rgba(59, 130, 246, 1);
   --primary-blue-hover: rgba(37, 99, 235, 1);
@@ -101,10 +99,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100dvw;
-
 }
-
-
 
 * {
   margin: 0;
@@ -186,12 +181,10 @@ button:focus-visible {
   position: relative;
   z-index: 1;
   align-items: center;
-
 }
 
 section {
   width: 75vw;
-
   text-align: center;
 }
 
@@ -296,7 +289,7 @@ section {
 }
 .glass-door-background_left {
   padding-left: calc(4vh + 2rem);
-text-align: center;
+  text-align: center;
   z-index: 2;
   width: 80%;
 
@@ -310,9 +303,9 @@ text-align: center;
     font-size: calc(1rem + 0.5vw);
     text-align: center;
   }
-    @media (max-width: 800px) {
-   &.glass-door-background_left{
-    padding: 0;
+  @media (max-width: 800px) {
+    &.glass-door-background_left {
+      padding: 0;
     }
   }
 }
@@ -366,7 +359,6 @@ text-align: center;
 }
 
 .cards-container {
-
   margin-bottom: 4rem;
 }
 .cards-content {
@@ -455,16 +447,16 @@ ul > .cards-content {
   height: 100%;
   background-color: var(--nav-accent);
 
- & .nav-links {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  place-content: center;
-  gap: 20px;
-  padding: 0 0.5rem;
-  text-align: center;
-}
+  & .nav-links {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-content: center;
+    gap: 20px;
+    padding: 0 0.5rem;
+    text-align: center;
+  }
 }
 .nav-links a {
   font-size: clamp(0.6rem, 1vw, 1.2rem);
@@ -521,8 +513,8 @@ li {
     aspect-ratio: 1/1;
     border: 10px solid var(--background-light);
     background-color: var(--primary-blue);
-    background: var(--shadow-light) url('./assets/img/MkLogo.png') no-repeat center
-      center;
+    background: var(--shadow-light) url('./assets/img/MkLogo.png') no-repeat
+      center center;
     background-size: cover;
     border-radius: 12px;
 
@@ -629,7 +621,6 @@ li {
   }
 }
 
-
 @supports not (animation-timeline: view()) {
   .glass-door-background_left {
     padding-left: 0;
@@ -644,7 +635,6 @@ li {
     width: 100%;
   }
   .section-gallery {
-
     overflow: hidden;
     margin: 0 auto;
     height: auto;
@@ -688,6 +678,119 @@ li {
     max-width: 400px;
     aspect-ratio: 2/1;
   }
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  color: var(--text-dark);
+  border-top: 1px solid var(--nav-accent);
+  margin-top: 4rem;
+  width: 80vw;
+  padding: 2rem 0;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--text-secondary-dark);
+  }
+}
+
+.footer-nav-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  width: 100%;
+  place-items: start;
+  justify-items: start;
+  margin-bottom: 2rem;
+
+  & > div:first-of-type {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-auto-flow: dense;
+    gap: 2rem;
+    text-align: start;
+    place-items: start;
+    padding-left: 1rem;
+  }
+}
+.footer-logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    padding: 0 2rem;
+  }
+}
+
+.footer-nav-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+
+  & h3 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+}
+
+.footer-nav-divider > h3::after {
+  content: '';
+  text-align: left;
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--text-dark);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--text-secondary-dark);
+  }
+}
+
+.footer-nav-divider > ul > li {
+  display: flex;
+  gap: 0.5rem;
+}
+
+svg {
+  fill: var(--text-dark);
+
+  @media (prefers-color-scheme: dark) {
+    fill: var(--text-secondary-dark);
+  }
+}
+
+li > a {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  color: var(--text-dark);
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--text-secondary-dark);
+  }
+}
+
+.footer-info {
+  display: flex;
+  width: 100%;
+  padding: 0 1rem;
+  justify-content: space-between;
+  font-size: 0.8rem;
 }
 
 /*Animations*/
