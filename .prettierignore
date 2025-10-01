@@ -6,4 +6,4 @@ build/
 coverage/
 .git/
 .DS_Store
-*.tsx
+# *.tsx
