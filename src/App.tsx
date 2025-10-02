@@ -16,7 +16,7 @@ function App() {
       <Nav />
       <Services />
       <Gallery />
-      <div style={{ padding: '2rem', maxWidth: '700px', margin: '0 auto' }}>
+      <div style={{ padding: '2rem', maxWidth: '75vw', margin: '0 auto' }}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, culpa
         accusantium eligendi sequi aspernatur ipsa rerum maiores modi unde
         suscipit quo recusandae, in iusto nesciunt porro vel ratione ipsum?
@@ -74,7 +74,7 @@ function App() {
         ipsa deserunt vitae. Itaque consequuntur excepturi iste enim dolore
         veniam ducimus eius, officia maiores mollitia?
       </div>
-      <Footer/>
+      <Footer />
     </main>
   );
 }

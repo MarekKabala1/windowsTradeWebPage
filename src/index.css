@@ -493,14 +493,14 @@ li {
   position: relative;
   aspect-ratio: 1/1;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px var(--shadow-light);
+  border-radius: 5px;
+  /* box-shadow: 0 4px 16px var(--shadow-light); */
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 5px;
   }
 
   &::after {
@@ -516,7 +516,7 @@ li {
     background: var(--shadow-light) url('./assets/img/MkLogo.png') no-repeat
       center center;
     background-size: cover;
-    border-radius: 12px;
+    border-radius: 5px;
 
     @media (prefers-color-scheme: dark) {
       border: 10px solid var(--background-gradient-dark);
