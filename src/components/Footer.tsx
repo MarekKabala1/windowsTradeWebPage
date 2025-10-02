@@ -6,12 +6,12 @@ export default function Footer() {
   return (
     <footer>
       <nav className="footer-nav-container">
-        <div className="footer-logo">
+        <div className="footer-logo logo">
           <img src={mkLogo} alt="Logo" />
         </div>
-        <div className="footer-nav-divider">
+        <div className="nav1 ">
           <h3>Useful Pages</h3>
-          <ul>
+          <ul className="footer-nav-links">
             <li>
               <a href="/about"> &gt; About Us</a>
             </li>
@@ -29,9 +29,9 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-nav-divider">
+        <div className="nav2">
           <h3>Services Offered</h3>
-          <ul>
+          <ul className="footer-nav-links">
             <li>
               <a href="/windows"> &gt; Windows Installation</a>
             </li>
@@ -47,9 +47,9 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-nav-divider">
+        <div className="nav3">
           <h3>Office Contact</h3>
-          <ul>
+          <ul className="footer-nav-links">
             <li>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -695,9 +695,23 @@ footer {
   }
 }
 
+.logo {
+  grid-area: logo;
+}
+.nav1 {
+  grid-area: nav1;
+}
+.nav2 {
+  grid-area: nav2;
+}
+.nav3 {
+  grid-area: nav3;
+}
+
 .footer-nav-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 'logo nav1 nav2 nav3';
   width: 100%;
   place-items: start;
   justify-items: start;
@@ -711,11 +725,23 @@ footer {
     justify-content: center;
   }
 
+  @media (max-width: 760px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    row-gap: 1rem;
+    grid-template-areas:
+      'logo nav1 nav2'
+      '. . nav3';
+  }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    grid-auto-flow: dense;
-    gap: 2rem;
-    text-align: start;
+    grid-template-areas:
+      'logo'
+      'nav1'
+      'nav2'
+      'nav3';
+    gap-row: 1rem;
+    text-align: left;
     place-items: start;
     padding-left: 1rem;
   }
@@ -723,7 +749,8 @@ footer {
 .footer-logo {
   max-width: 200px;
   height: auto;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  margin: 0 auto 1rem auto;
 
   img {
     width: 100%;
@@ -732,7 +759,7 @@ footer {
   }
 }
 
-.footer-nav-divider {
+.footer-nav-container > div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -740,21 +767,23 @@ footer {
 
   & h3 {
     font-size: clamp(1rem, 2vw, 1.2rem);
-  }
-
-  & ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.7rem;
+    position: relative;
   }
 }
 
+.footer-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
 .footer-nav-divider > h3::after {
   content: '';
-  text-align: left;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   display: block;
-  width: 30px;
+  width: 5vw;
   height: 2px;
   background-color: var(--text-dark);
 
@@ -763,7 +792,7 @@ footer {
   }
 }
 
-.footer-nav-divider > ul > li {
+.footer-nav-links > li {
   display: flex;
   gap: 0.5rem;
 }
@@ -777,7 +806,7 @@ svg {
 }
 
 li > a {
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-size: clamp(0.7rem, 1.4vw, 1rem);
   color: var(--text-dark);
 
   @media (prefers-color-scheme: dark) {
@@ -791,6 +820,10 @@ li > a {
   padding: 0 1rem;
   justify-content: space-between;
   font-size: 0.8rem;
+
+  & p {
+    font-size: clamp(0.7rem, 1.4vw, 1rem);
+  }
 }
 
 /*Animations*/
