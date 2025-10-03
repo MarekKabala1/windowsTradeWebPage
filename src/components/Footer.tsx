@@ -10,7 +10,9 @@ export default function Footer() {
           <img src={mkLogo} alt="Logo" />
         </div>
         <div className="nav1 ">
-          <h3>Useful Pages</h3>
+          <h3>
+            <span>Useful</span> Pages
+          </h3>
           <ul className="footer-nav-links">
             <li>
               <a href="/about"> &gt; About Us</a>
@@ -30,7 +32,9 @@ export default function Footer() {
           </ul>
         </div>
         <div className="nav2">
-          <h3>Services Offered</h3>
+          <h3>
+            <span>Services </span>Offered
+          </h3>
           <ul className="footer-nav-links">
             <li>
               <a href="/windows"> &gt; Windows Installation</a>
@@ -48,7 +52,9 @@ export default function Footer() {
           </ul>
         </div>
         <div className="nav3">
-          <h3>Office Contact</h3>
+          <h3>
+            <span>Office</span> Contact
+          </h3>
           <ul className="footer-nav-links">
             <li>
               <svg
