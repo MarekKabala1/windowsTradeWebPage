@@ -25,41 +25,49 @@ export default function Gallery(): JSX.Element {
                     cost of a standard door.
                   </p>
                 </div>
-                <img src={bifoldImage}
-                 alt="Bifold door"
-                 width="600"
-                 height="400"
-                 loading="lazy" />
+                <img
+                  src={bifoldImage}
+                  alt="Bifold door"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                />
               </div>
               <div className="gallery-subitems">
                 <div className="gallery-subitem-text">
                   <h2>Doors</h2>
                   <p>High quality doors for every home and business</p>
                 </div>
-                <img src={doorImage}
-                 alt="Door"
-                 width="600"
-                 height="400"
-                 loading="lazy" />
+                <img
+                  src={doorImage}
+                  alt="Door"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                />
               </div>
               <div className="gallery-subitems">
                 <div className="gallery-subitem-text">
                   <h2>Windows</h2>
                   <p>Energy efficient and stylish windows</p>
                 </div>
-                <img src={windowImage}
+                <img
+                  src={windowImage}
                   alt="Windows"
                   width="600"
                   height="400"
-                  loading="lazy"  />
+                  loading="lazy"
+                />
               </div>
               <div className="gallery-subitems">
                 <div className="gallery-subitem-text"></div>
-                <img src={mkLogo}
-                 alt="Logo"
-                 width="600"
-                 height="400"
-                 loading="lazy"  />
+                <img
+                  src={mkLogo}
+                  alt="Logo"
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
