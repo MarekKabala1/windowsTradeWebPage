@@ -1,4 +1,3 @@
-
 @layer reset, variables, base, layout, components, utilities, themes, responsive;
 
 @layer reset {
@@ -28,76 +27,69 @@
   }
 }
 
-
 @layer variables {
-
   :root {
-    /* Layout Variables */
-    --numcards: 4;
+    --cards-count: 4;
     --card-margin: 2rem;
     --card-top-offset: 1em;
     --card-height: 40vh;
 
-    /* Color Variables */
-    --primary-blue: rgba(59, 130, 246, 1);
-    --primary-blue-hover: rgba(37, 99, 235, 1);
-    --primary-blue-light: rgba(96, 165, 250, 1);
+    --primary: rgba(59, 130, 246, 1);
+    --primary-hover: rgba(37, 99, 235, 1);
+    --primary-light: rgba(96, 165, 250, 1);
 
-    /* Light Theme Colors */
-    --background-light: rgba(255, 255, 255, 1);
-    --background-gradient: rgba(217, 229, 254, 1);
-    --text-primary: rgba(64, 61, 61, 0.87);
-    --text-dark: rgba(33, 53, 71, 1);
-    --button-dark: rgba(26, 26, 26, 1);
-    --button-light: rgba(249, 249, 249, 1);
+    --bg: rgba(255, 255, 255, 1);
+    --bg-gradient: rgba(217, 229, 254, 1);
+    --bg-dark: rgba(15, 23, 42, 1);
+    --bg-gradient-dark: rgba(30, 41, 59, 1);
 
-    /* Dark Theme Colors */
-    --background-dark: rgba(15, 23, 42, 1);
-    --background-gradient-dark: rgba(30, 41, 59, 1);
-    --text-light: rgba(248, 250, 252, 0.87);
-    --text-secondary-dark: rgba(203, 213, 225, 0.7);
-    --button-dark-theme: rgba(51, 65, 85, 1);
-    --button-light-theme: rgba(30, 41, 59, 1);
+    --fg: rgba(64, 61, 61, 0.87);
+    --fg-primary: rgba(33, 53, 71, 1);
+    --fg-dark: rgba(248, 250, 252, 0.87);
+    --fg-secondary-dark: rgba(203, 213, 225, 0.7);
 
-    /* Door Colors */
+    --btn: rgba(26, 26, 26, 1);
+    --btn-light: rgba(249, 249, 249, 1);
+    --btn-dark: rgba(51, 65, 85, 1);
+    --btn-secondary-dark: rgba(30, 41, 59, 1);
+
     --door-frame: rgba(171, 188, 230, 1);
-    --door-frame-dark: rgba(100, 116, 139, 1);
     --door-border: rgba(8, 24, 63, 1);
-    --door-border-dark: rgba(148, 163, 184, 1);
     --door-glass: rgba(88, 171, 205, 0.3);
-    --door-glass-dark: rgba(59, 130, 246, 0.2);
-    --door-dark-glass: rgba(29, 119, 171, 0.3);
-    --door-dark-glass-dark: rgba(37, 99, 235, 0.2);
+    --door-glass-strong: rgba(29, 119, 171, 0.3);
     --door-handle: rgba(8, 24, 63, 1);
+
+    --door-frame-dark: rgba(100, 116, 139, 1);
+    --door-border-dark: rgba(148, 163, 184, 1);
+    --door-glass-dark: rgba(59, 130, 246, 0.2);
+    --door-glass-strong-dark: rgba(37, 99, 235, 0.2);
     --door-handle-dark: rgba(148, 163, 184, 1);
 
-    /* Glass Effects */
-    --glass-background: rgba(255, 255, 255, 0.3);
-    --glass-background-dark: rgba(51, 65, 85, 0.3);
+    --glass-bg: rgba(255, 255, 255, 0.3);
     --glass-shadow: rgba(71, 123, 201, 1);
-    --glass-shadow-dark: rgba(59, 130, 246, 1);
     --glass-card-bg: rgba(167, 191, 231, 1);
-    --glass-card-bg-dark: rgba(51, 65, 85, 0.8);
     --glass-card-border: rgba(213, 222, 225, 0.2);
-    --glass-card-border-dark: rgba(148, 163, 184, 0.2);
     --glass-text-shadow: rgba(187, 184, 184, 0.5);
+
+    --glass-bg-dark: rgba(51, 65, 85, 0.3);
+    --glass-shadow-dark: rgba(59, 130, 246, 1);
+    --glass-card-bg-dark: rgba(51, 65, 85, 0.8);
+    --glass-card-border-dark: rgba(148, 163, 184, 0.2);
     --glass-text-shadow-dark: rgba(0, 0, 0, 0.8);
 
-    /* Navigation */
-    --nav-background: rgba(255, 255, 255, 1);
-    --nav-background-dark: rgba(15, 23, 42, 0.5);
+    --nav-bg: rgba(255, 255, 255, 1);
     --nav-accent: rgba(74, 126, 217, 0.2);
-    --nav-accent-dark: rgba(59, 130, 246, 0.3);
-    --nav-text: rgba(33, 53, 71, 1);
-    --nav-text-dark: rgba(203, 213, 225, 1);
+    --nav-fg: rgba(33, 53, 71, 1);
 
-    /* Shadows */
-    --shadow-light: rgba(0, 0, 0, 0.5);
-    --shadow-heavy: rgba(0, 0, 0, 0.3);
+    --nav-bg-dark: rgba(15, 23, 42, 0.5);
+    --nav-accent-dark: rgba(59, 130, 246, 0.3);
+    --nav-fg-dark: rgba(203, 213, 225, 1);
+
+    --shadow-sm: rgba(0, 0, 0, 0.5);
+    --shadow-md: rgba(0, 0, 0, 0.3);
     --shadow-inset: rgba(255, 255, 255, 0.1);
   }
 }
-
 
 @layer base {
   :root {
@@ -105,8 +97,8 @@
     line-height: 1.5;
     font-weight: 400;
     color-scheme: light dark;
-    color: var(--text-primary);
-    background-color: var(--background-gradient);
+    color: var(--fg);
+    background-color: var(--bg-gradient);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -123,12 +115,12 @@
 
   a {
     font-weight: 500;
-    color: var(--primary-blue);
+    color: var(--primary);
     text-decoration: inherit;
   }
 
   a:hover {
-    color: var(--primary-blue-hover);
+    color: var(--primary-hover);
   }
 
   button {
@@ -138,13 +130,13 @@
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: var(--button-dark);
+    background-color: var(--btn);
     cursor: pointer;
     transition: border-color 0.25s;
   }
 
   button:hover {
-    border-color: var(--primary-blue);
+    border-color: var(--primary);
   }
 
   button:focus,
@@ -153,17 +145,16 @@
   }
 
   svg {
-    fill: var(--text-dark);
+    fill: var(--fg-primary);
   }
 
   li > a {
     font-size: clamp(0.7rem, 1.4vw, 1rem);
-    color: var(--text-dark);
+    color: var(--fg-primary);
   }
 }
 
 @layer layout {
-
   .app-container {
     width: auto;
     display: flex;
@@ -187,9 +178,7 @@
   }
 }
 
-
 @layer components {
-
   .door-container {
     position: fixed;
     top: 0;
@@ -255,7 +244,7 @@
     width: 20%;
     height: stretch;
     height: 100dvh;
-    background: var(--door-dark-glass);
+    background: var(--door-glass-strong);
     position: absolute;
     top: 0;
   }
@@ -342,7 +331,7 @@
 
     .glass-card {
       --index0: calc(var(--index) - 1);
-      --reverse-index: calc(var(--numcards) - var(--index0));
+      --reverse-index: calc(var(--cards-count) - var(--index0));
       --reverse-index0: calc(var(--reverse-index) - 1);
     }
   }
@@ -355,9 +344,9 @@
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(var(--numcards), var(--card-height));
+    grid-template-rows: repeat(var(--cards-count), var(--card-height));
     gap: 4vw;
-    padding-bottom: calc(calc(var(--numcards) * var(--card-top-offset))+4vw);
+    padding-bottom: calc(calc(var(--cards-count) * var(--card-top-offset))+4vw);
     margin-bottom: 4vw;
   }
 
@@ -368,8 +357,8 @@
   }
 
   .glass-card {
-    --start-range: calc(var(--index0) / var(--numcards) * 100%);
-    --end-range: calc(var(--index) / var(--numcards) * 100%);
+    --start-range: calc(var(--index0) / var(--cards-count) * 100%);
+    --end-range: calc(var(--index) / var(--cards-count) * 100%);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -383,12 +372,13 @@
     max-width: 700px;
     height: var(--card-height);
     box-shadow:
-      0 8px 32px var(--shadow-heavy),
+      0 8px 32px var(--shadow-md),
       inset 0 1px 0 var(--shadow-inset);
     transform-origin: 50% 0%;
     will-change: transform;
     animation: linear scale forwards;
-    animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+    animation-range: exit-crossing var(--start-range) exit-crossing
+      var(--end-range);
     animation-timeline: --cards-scroll;
   }
 
@@ -402,16 +392,23 @@
     line-height: 2rem;
   }
 
-  #card_1 { --index: 1; }
-  #card_2 { --index: 2; }
-  #card_3 { --index: 3; }
-  #card_4 { --index: 4; }
+  #card_1 {
+    --index: 1;
+  }
+  #card_2 {
+    --index: 2;
+  }
+  #card_3 {
+    --index: 3;
+  }
+  #card_4 {
+    --index: 4;
+  }
 
   ul > .cards-content {
     height: 100%;
     margin-top: 10vh;
   }
-
 
   .header {
     position: sticky;
@@ -423,7 +420,7 @@
     height: 70px;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    border: 1px solid var(--nav-background);
+    border: 1px solid var(--nav-bg);
     margin-top: 2rem;
     z-index: 100;
   }
@@ -454,7 +451,7 @@
 
   .nav-links a:hover,
   .nav-links a:active {
-    color: var(--nav-accent);
+    color: var(--nav-fg);
   }
 
   .services-section {
@@ -498,9 +495,10 @@
     right: -15%;
     width: 50%;
     aspect-ratio: 1/1;
-    border: 10px solid var(--background-light);
-    background-color: var(--primary-blue);
-    background: var(--shadow-light) url('./assets/img/MkLogo.png') no-repeat center center;
+    border: 10px solid var(--bg);
+    background-color: var(--primary);
+    background: var(--shadow-sm) url('./assets/img/MkLogo.png') no-repeat center
+      center;
     background-size: cover;
     border-radius: 5px;
   }
@@ -575,22 +573,22 @@
 
   .gallery-item {
     width: 250vw;
-    height:100%;
+    height: 100%;
     flex-shrink: 0;
     object-fit: cover;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    scroll-snap-type: x mandatory;
   }
 
   .gallery-subitems {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    border: 4px solid var(--background-light);
+    border: 4px solid var(--bg);
     width: 100dvw;
     height: 100%;
-
   }
 
   .gallery-subitems img {
@@ -609,17 +607,25 @@
     position: relative;
     bottom: 0;
     left: 0;
-    color: var(--text-dark);
+    color: var(--fg-primary);
     border-top: 1px solid var(--nav-accent);
     margin-top: 4rem;
     width: 80vw;
     padding: 2rem 1rem;
   }
 
-  .logo { grid-area: logo; }
-  .nav1 { grid-area: nav1; }
-  .nav2 { grid-area: nav2; }
-  .nav3 { grid-area: nav3; }
+  .logo {
+    grid-area: logo;
+  }
+  .nav1 {
+    grid-area: nav1;
+  }
+  .nav2 {
+    grid-area: nav2;
+  }
+  .nav3 {
+    grid-area: nav3;
+  }
 
   .footer-nav-container {
     display: grid;
@@ -680,7 +686,7 @@
     display: block;
     width: 100%;
     height: 2px;
-    background-color: var(--text-dark);
+    background-color: var(--fg-primary);
   }
 
   .footer-nav-links > li {
@@ -701,13 +707,21 @@
   }
 
   @keyframes slideLeft {
-    from { transform: translateX(0); }
-    to { transform: translateX(-40vw); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-40vw);
+    }
   }
 
   @keyframes slideRight {
-    from { transform: translateX(0); }
-    to { transform: translateX(40vw); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(40vw);
+    }
   }
 
   @keyframes fadeIn {
@@ -735,72 +749,70 @@
 }
 
 @layer themes {
-
   @media (prefers-color-scheme: light) {
     :root {
-      color: var(--text-dark);
-      background-color: var(--background-gradient);
+      color: var(--fg-primary);
+      background-color: var(--bg-gradient);
     }
 
     a:hover {
-      color: var(--primary-blue-light);
+      color: var(--primary-light);
     }
 
     button {
-      background-color: var(--button-light);
+      background-color: var(--btn-light);
     }
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      color: var(--text-light);
-      background-color: var(--background-gradient-dark);
+      color: var(--fg-dark);
+      background-color: var(--bg-gradient-dark);
 
       --door-frame: var(--door-frame-dark);
       --door-border: var(--door-border-dark);
       --door-glass: var(--door-glass-dark);
-      --door-dark-glass: var(--door-dark-glass-dark);
+      --door-glass-strong: var(--door-glass-strong-dark);
       --door-handle: var(--door-handle-dark);
 
-      --glass-background: var(--glass-background-dark);
+      --glass-bg: var(--glass-bg-dark);
       --glass-shadow: var(--glass-shadow-dark);
       --glass-card-bg: var(--glass-card-bg-dark);
       --glass-card-border: var(--glass-card-border-dark);
       --glass-text-shadow: var(--glass-text-shadow-dark);
 
-      --nav-background: var(--nav-background-dark);
+      --nav-bg: var(--nav-bg-dark);
       --nav-accent: var(--nav-accent-dark);
-      --nav-text: var(--nav-text-dark);
+      --nav-fg: var(--nav-fg-dark);
     }
 
     button {
-      background-color: var(--button-dark-theme);
+      background-color: var(--btn-dark);
     }
 
     svg {
-      fill: var(--text-secondary-dark);
+      fill: var(--fg-secondary-dark);
     }
 
     li > a {
-      color: var(--text-secondary-dark);
+      color: var(--fg-secondary-dark);
     }
 
     footer {
-      color: var(--text-secondary-dark);
+      color: var(--fg-secondary-dark);
     }
 
     .footer-nav-container > div > h3 > span::after {
-      background-color: var(--text-secondary-dark);
+      background-color: var(--fg-secondary-dark);
     }
 
     .service-image::after {
-      border: 10px solid var(--background-gradient-dark);
+      border: 10px solid var(--bg-gradient-dark);
     }
   }
 }
 
 @layer responsive {
-
   @media (max-width: 800px) {
     .glass-door-background_left {
       padding: 0;
