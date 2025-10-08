@@ -4,7 +4,38 @@ import windowImage from '../assets/img/window.png';
 import doorImage from '../assets/img/door.png';
 import mkLogo from '../assets/img/MkLogo.png';
 
-export default function Gallery(): JSX.Element {
+type GalleryItems = {
+  imageUrl?: string;
+  header: string;
+  description: string;
+};
+
+type GalleryItemsProps = {
+  items?: GalleryItems[];
+};
+
+const DEFAULT_GALLERY_ITEMS: GalleryItems[] = [
+  {
+    imageUrl: bifoldImage,
+    header: 'Bifold',
+    description:
+      '  Custom made to your specifications, at a fraction of the cost of a standard door.',
+  },
+  {
+    imageUrl: windowImage,
+    header: 'Windows',
+    description: 'Energy efficient and stylish windows',
+  },
+  {
+    imageUrl: doorImage,
+    header: 'Doors',
+    description: 'High quality doors for every home and business',
+  },
+];
+
+export default function Gallery({
+  items = DEFAULT_GALLERY_ITEMS,
+}: GalleryItemsProps): JSX.Element {
   return (
     <>
       <link rel="preload" as="image" href={bifoldImage} />
@@ -17,48 +48,21 @@ export default function Gallery(): JSX.Element {
         <div className="gallery-container">
           <div className="gallery">
             <div className="gallery-item ">
-              <div className="gallery-subitems">
-                <div className="gallery-subitem-text">
-                  <h2>Bifold</h2>
-                  <p>
-                    Custom made to your specifications, at a fraction of the
-                    cost of a standard door.
-                  </p>
+              {items?.map((item, index) => (
+                <div className="gallery-subitems" key={index}>
+                  <div className="gallery-subitem-text">
+                    <h2>{item.header}</h2>
+                    <p>{item.description}</p>
+                  </div>
+                  <img
+                    src={item.imageUrl}
+                    alt={item.header}
+                    width="600"
+                    height="400"
+                    loading="lazy"
+                  />
                 </div>
-                <img
-                  src={bifoldImage}
-                  alt="Bifold door"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                />
-              </div>
-              <div className="gallery-subitems">
-                <div className="gallery-subitem-text">
-                  <h2>Doors</h2>
-                  <p>High quality doors for every home and business</p>
-                </div>
-                <img
-                  src={doorImage}
-                  alt="Door"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                />
-              </div>
-              <div className="gallery-subitems">
-                <div className="gallery-subitem-text">
-                  <h2>Windows</h2>
-                  <p>Energy efficient and stylish windows</p>
-                </div>
-                <img
-                  src={windowImage}
-                  alt="Windows"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                />
-              </div>
+              ))}
               <div className="gallery-subitems">
                 <div className="gallery-subitem-text"></div>
                 <img
