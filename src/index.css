@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    place-items: center;
+    /* place-items: center; */
   }
 
   html,
@@ -15,12 +15,12 @@
     margin: 0;
     padding: 0;
     width: 100dvw;
+    scrollbar-gutter: stable;
   }
 
   body {
     overflow-x: hidden;
   }
-
 
   li {
     list-style: none;
@@ -86,6 +86,10 @@
     --nav-accent-dark: rgba(59, 130, 246, 0.3);
     --nav-fg-dark: rgba(203, 213, 225, 1);
 
+    --emergency-red: rgba(220, 38, 38, 1);
+    --emergency-red-light: rgba(239, 68, 68, 1);
+    --emergency-red-dark: rgba(185, 28, 28, 1);
+
     --shadow-sm: rgba(0, 0, 0, 0.5);
     --shadow-md: rgba(0, 0, 0, 0.3);
     --shadow-inset: rgba(255, 255, 255, 0.1);
@@ -124,25 +128,50 @@
     color: var(--primary-hover);
   }
 
-  button {
+  button,
+  .btn {
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: var(--btn);
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    background-color: var(--primary);
+    color: var(--primary);
     cursor: pointer;
     transition: border-color 0.25s;
   }
 
+  .btn:hover,
   button:hover {
-    border-color: var(--primary);
+    border-color: var(--primary-hover);
   }
-
+  .btn-emergency:hover {
+    border-color: var(--emergency-red-light);
+  }
+  a.btn-emergency:hover {
+    color: var(--emergency-red-light);
+  }
+  .btn:focus,
+  .btn:focus-visible,
   button:focus,
   button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--primary-light);
+    color: var(--primary-light);
+  }
+
+  .btn-emergency {
+    background-color: var(--emergency-red);
+    color: var(--bg);
+    padding: 0.6em 1.2em;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    box-shadow: 0 4px 6px var(--shadow-sm);
+    transition: background-color 0.25s;
   }
 
   svg {
@@ -167,18 +196,16 @@
   }
 
   section {
-    width: 75vw;
+    width: 70vw;
     text-align: center;
     margin: 0 auto;
   }
-
-
 }
 
 @layer components {
   .door-container {
     position: fixed;
-    top: 0;
+    top: 600px;
     left: 0;
     width: 100dvw;
     min-height: 100dvh;
@@ -195,28 +222,27 @@
     position: absolute;
     inset: 0;
 
+    .door-frame {
+      width: 50%;
+      height: 100dvh;
+      position: relative;
+    }
 
-   .door-frame {
-    width: 50%;
-    height: 100dvh;
-    position: relative;
-  }
+    .door-right {
+      border-left: 1px solid var(--door-border);
+      border-radius: 0 10px 10px 0;
+      animation: slideRight linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px 150px;
+    }
 
-  .door-right {
-    border-left: 1px solid var(--door-border);
-    border-radius: 0 10px 10px 0;
-    animation: slideRight linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0px 150px;
-  }
-
- .door-left {
-    border-right: 1px solid var(--door-border);
-    border-radius: 10px 0 0 10px;
-    animation: slideLeft linear both;
-    animation-timeline: scroll(root);
-    animation-range: 0px 150px;
-  }
+    .door-left {
+      border-right: 1px solid var(--door-border);
+      border-radius: 10px 0 0 10px;
+      animation: slideLeft linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0px 150px;
+    }
   }
 
   .door-glass {
@@ -272,6 +298,177 @@
 
   .door-handle.door-handle-right {
     left: 5%;
+  }
+  .hero-emergency {
+    width: 100%;
+    height: 100dvh;
+  }
+  .nav-emergency {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-accent);
+
+    .logo {
+      height: 70px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .emergency-badge {
+      background-color: var(--emergency-red);
+      color: var(--fg-dark);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+      box-shadow: 0 4px 6px var(--shadow-sm);
+      transition: background-color 0.25s;
+      animation: badgePulse 3s ease-in-out infinite;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        font-size: clamp(0.7rem, 1.4vw, 1rem);
+        color: var(--fg-dark);
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 1rem;
+
+    .hero-text {
+      width: 100%;
+      text-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .hero-subtitle {
+        font-size: calc(1rem + 0.5vw);
+        text-shadow: 1px 1px 9px var(--glass-text-shadow);
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: var(--emergency-red);
+      }
+      .hero-title {
+        font-size: calc(2rem + 2vw);
+        line-height: 1.1;
+
+        font-weight: bold;
+      }
+      .hero-title span {
+        color: var(--emergency-red);
+        text-shadow: 1px 1px 9px var(--glass-text-shadow);
+      }
+
+      .hero-description {
+        font-size: calc(1rem + 0.5vw);
+        text-shadow: 1px 1px 9px var(--glass-text-shadow);
+        text-wrap: balance;
+      }
+    }
+
+    .urgent-services {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+
+      .service-item {
+        background: var(--glass-bg);
+        backdrop-filter: blur(10px);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        color: var(--fg-dark);
+        font-weight: 600;
+        border: 1px solid var(--glass-card-border);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: start;
+    }
+  }
+
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: white;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--glass-card-border);
+  }
+
+  .badge-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  }
+
+  .badge-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .badge-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  .badge-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  @keyframes badgePulse {
+    0%,
+    100% {
+      transform: scale(1);
+      box-shadow: 0 4px 15px var(--emergency-red);
+      opacity: 0.45;
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px var(--emergency-red-light);
+      opacity: 1;
+    }
   }
 
   .glass-door-background {
@@ -354,7 +551,7 @@
     padding-top: calc(var(--index) * var(--card-top-offset));
   }
 
-    .fade-in-section {
+  .fade-in-section {
     opacity: 0;
     transform: translateY(50px);
     animation: fadeIn 0.5s ease-out forwards;
