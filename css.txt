@@ -798,7 +798,7 @@ footer {
 
 .footer-nav-links > li {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--gap-sm);
 }
 
 svg {
