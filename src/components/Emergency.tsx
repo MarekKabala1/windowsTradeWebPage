@@ -7,7 +7,7 @@ export default function Emergency() {
         <div className="logo">
           <img src={mkLogo} alt="Logo" />
         </div>
-        <div className="emergency-badge">🚨 24/7 AVAILABLE</div>
+        {/* <div className="emergency-badge">🚨 24/7 AVAILABLE</div> */}
         <ul className="nav-links">
           <li>
             <a href="#services">Services</a>
@@ -65,6 +65,15 @@ export default function Emergency() {
             <span className="badge-subtitle">Free Quote</span>
           </div>
         </div>
+      </div>
+
+      <div className="hero-buttons">
+        <a href="tel:+441234567890" className="btn btn-emergency">
+          📞 Call Now: 07506122310
+        </a>
+        <a href="#quote" className="btn btn-secondary">
+          Request Callback
+        </a>
       </div>
     </section>
   );
