@@ -18,7 +18,9 @@ function App() {
       <Nav />
       <Services />
       <Gallery />
-      <div style={{ padding: '2rem', maxWidth: '75vw', margin: '0 auto' }}>
+      <div
+        style={{ padding: 'var(--gap-lg)', maxWidth: '75vw', margin: '0 auto' }}
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, culpa
         accusantium eligendi sequi aspernatur ipsa rerum maiores modi unde
         suscipit quo recusandae, in iusto nesciunt porro vel ratione ipsum?
