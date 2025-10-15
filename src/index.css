@@ -212,6 +212,10 @@
     margin: 0 auto;
     padding: var(--gap-lg) 0;
   }
+
+  section:first-child {
+    padding-top: 0;
+  }
 }
 
 @layer components {
