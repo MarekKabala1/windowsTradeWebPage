@@ -2,7 +2,7 @@ import type { JSX } from 'react';
 import bifoldImage from '../assets/img/bifold.png';
 import windowImage from '../assets/img/window.png';
 import doorImage from '../assets/img/door.png';
-import mkLogo from '../assets/img/MkLogo.png';
+import mkLogo from '../assets/img/MkLogoNoBg.png';
 
 type GalleryItems = {
   imageUrl?: string;
@@ -68,7 +68,7 @@ export default function Gallery({
                 <img
                   src={mkLogo}
                   alt="Logo"
-                  width="600"
+                  width="400"
                   height="400"
                   loading="lazy"
                 />

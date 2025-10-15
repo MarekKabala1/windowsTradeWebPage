@@ -5,7 +5,7 @@ export default function Emergency() {
     <section className="hero-emergency">
       <nav className="nav-emergency">
         <div className="logo">
-          <img src={mkLogo} alt="Logo" />
+          <img src={mkLogo} alt="Logo" width={100} height={100} />
         </div>
         {/* <div className="emergency-badge">🚨 24/7 AVAILABLE</div> */}
         <ul className="nav-links">
