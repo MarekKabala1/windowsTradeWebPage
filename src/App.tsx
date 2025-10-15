@@ -1,4 +1,5 @@
 import './App.css';
+import About from './components/About';
 import Cards from './components/Cards';
 import Emergency from './components/Emergency';
 import Footer from './components/Footer';
@@ -18,66 +19,7 @@ function App() {
       <Nav />
       <Services />
       <Gallery />
-      <div
-        style={{ padding: 'var(--gap-lg)', maxWidth: '75vw', margin: '0 auto' }}
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, culpa
-        accusantium eligendi sequi aspernatur ipsa rerum maiores modi unde
-        suscipit quo recusandae, in iusto nesciunt porro vel ratione ipsum?
-        Repellendus illum aliquam enim, quaerat adipisci culpa nisi itaque
-        minima excepturi repellat facilis ad doloremque distinctio optio quo
-        perspiciatis quam officia? Lorem ipsum dolor sit, amet consectetur
-        adipisicing elit. Aspernatur officia excepturi modi esse, accusamus
-        sunt, libero explicabo debitis illum asperiores placeat, deleniti magni
-        vero labore quibusdam officiis corporis! Fugit rerum reprehenderit
-        explicabo, doloremque atque aliquam ipsa deserunt vitae. Itaque
-        consequuntur excepturi iste enim dolore veniam ducimus eius, officia
-        maiores mollitia? Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Facere, culpa accusantium eligendi sequi aspernatur ipsa rerum
-        maiores modi unde suscipit quo recusandae, in iusto nesciunt porro vel
-        ratione ipsum? Repellendus illum aliquam enim, quaerat adipisci culpa
-        nisi itaque minima excepturi repellat facilis ad doloremque distinctio
-        optio quo perspiciatis quam officia? Lorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Aspernatur officia excepturi modi esse,
-        accusamus sunt, libero explicabo debitis illum asperiores placeat,
-        deleniti magni vero labore quibusdam officiis corporis! Fugit rerum
-        reprehenderit explicabo, doloremque atque aliquam ipsa deserunt vitae.
-        Itaque consequuntur excepturi iste enim dolore veniam ducimus eius,
-        officia maiores mollitia? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Facere, culpa accusantium eligendi sequi aspernatur
-        ipsa rerum maiores modi unde suscipit quo recusandae, in iusto nesciunt
-        porro vel ratione ipsum? Repellendus illum aliquam enim, quaerat
-        adipisci culpa nisi itaque minima excepturi repellat facilis ad
-        doloremque distinctio optio quo perspiciatis quam officia? Lorem ipsum
-        dolor sit, amet consectetur adipisicing elit. Aspernatur officia
-        excepturi modi esse, accusamus sunt, libero explicabo debitis illum
-        asperiores placeat, deleniti magni vero labore quibusdam officiis
-        corporis! Fugit rerum reprehenderit explicabo, doloremque atque aliquam
-        ipsa deserunt vitae. Itaque consequuntur excepturi iste enim dolore
-        veniam ducimus eius, officia maiores mollitia? Lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Facere, culpa accusantium eligendi
-        sequi aspernatur ipsa rerum maiores modi unde suscipit quo recusandae,
-        in iusto nesciunt porro vel ratione ipsum? Repellendus illum aliquam
-        enim, quaerat adipisci culpa nisi itaque minima excepturi repellat
-        facilis ad doloremque distinctio optio quo perspiciatis quam officia?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur
-        officia excepturi modi esse, accusamus sunt, libero explicabo debitis
-        illum asperiores placeat, deleniti magni vero labore quibusdam officiis
-        corporis! Fugit rerum reprehenderit explicabo, doloremque atque aliquam
-        ipsa deserunt vitae. Itaque consequuntur excepturi iste enim dolore
-        veniam ducimus eius, officia maiores mollitia? Lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Facere, culpa accusantium eligendi
-        sequi aspernatur ipsa rerum maiores modi unde suscipit quo recusandae,
-        in iusto nesciunt porro vel ratione ipsum? Repellendus illum aliquam
-        enim, quaerat adipisci culpa nisi itaque minima excepturi repellat
-        facilis ad doloremque distinctio optio quo perspiciatis quam officia?
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur
-        officia excepturi modi esse, accusamus sunt, libero explicabo debitis
-        illum asperiores placeat, deleniti magni vero labore quibusdam officiis
-        corporis! Fugit rerum reprehenderit explicabo, doloremque atque aliquam
-        ipsa deserunt vitae. Itaque consequuntur excepturi iste enim dolore
-        veniam ducimus eius, officia maiores mollitia?
-      </div>
+      <About />
       <Footer />
     </main>
   );

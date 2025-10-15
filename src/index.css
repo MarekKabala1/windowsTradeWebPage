@@ -147,7 +147,7 @@
     padding: 0.6em 1.2em;
     font-size: clamp(var(--font-size-sm), 1.5vw, var(--font-size-md));
     background-color: var(--primary);
-    color: var(--primary);
+    color: var(--btn-light);
     cursor: pointer;
     transition: border-color 0.25s;
   }
@@ -210,6 +210,7 @@
     width: 70vw;
     text-align: center;
     margin: 0 auto;
+    padding: var(--gap-lg) 0;
   }
 }
 
@@ -685,9 +686,6 @@
     color: var(--nav-fg);
   }
 
-  .services-section {
-    margin: var(--gap-xl) auto;
-  }
   .services-cards {
     display: flex;
     justify-content: center;
@@ -741,7 +739,7 @@
     gap: var(--gap-md);
   }
 
-  .service-content .service-header {
+  .service-content  .service-header {
     font-size: clamp(var(--font-size-md), 2vw, var(--font-size-lg));
     line-height: 1.1;
   }
@@ -836,6 +834,33 @@
     grid-template-columns: 1fr;
     width: 30vw;
     place-content: center;
+  }
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-xl);
+    min-height: 100dvh;
+  }
+
+  .about-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-lg);
+    text-align: center;
+    padding: 3rem;
+    background: var(--glass-card-bg);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+
+    .cta-buttons {
+      display: flex;
+      gap: var(--gap-lg);
+    }
   }
 
   footer {
