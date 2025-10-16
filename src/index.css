@@ -98,13 +98,12 @@
     --gap-lg: 2rem;
     --gap-xl: 4rem;
 
-    --font-size-sm: 0.8rem;
+    --font-size-sm: 0.7rem;
     --font-size-md: 1rem;
     --font-size-lg: 2rem;
     --font-size-xl: 4rem;
 
     --nav-height: 80px;
-    /* --hero-height: 100dvh; */
   }
 }
 
@@ -185,7 +184,21 @@
     box-shadow: 0 4px 6px var(--shadow-sm);
     transition: background-color 0.25s;
   }
-
+  .card{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+    background: var(--glass-card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-card-border);
+    box-shadow:
+    0 8px 32px var(--shadow-md),
+    inset 0 1px 0 var(--shadow-inset);
+    border-radius: 16px;
+    padding: var(--gap-lg) var(--gap-md);
+    max-width: 700px;
+  }
   svg {
     fill: var(--fg-primary);
   }
@@ -580,7 +593,7 @@
     margin-bottom: 4vw;
   }
 
-  .card {
+  .cards {
     position: sticky;
     top: 0;
     padding-top: calc(var(--index) * var(--card-top-offset));
@@ -597,20 +610,7 @@
   .glass-card {
     --start-range: calc(var(--index0) / var(--cards-count) * 100%);
     --end-range: calc(var(--index) / var(--cards-count) * 100%);
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-lg);
-    background: var(--glass-card-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-card-border);
-    border-radius: 16px;
-    padding: var(--gap-lg) var(--gap-md);
-    max-width: 700px;
     height: var(--card-height);
-    box-shadow:
-      0 8px 32px var(--shadow-md),
-      inset 0 1px 0 var(--shadow-inset);
     transform-origin: 50% 0%;
     will-change: transform;
     animation: linear scale forwards;
@@ -654,7 +654,7 @@
     width: 80vw;
     margin: 0 auto;
     margin-bottom: var(--gap-xl);
-    height: 70px;
+    height: var(--nav-height);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border: 1px solid var(--nav-bg);
@@ -666,28 +666,40 @@
     width: 100%;
     height: 100%;
     background-color: var(--nav-accent);
-  }
 
-  .nav-bar .nav-links {
+
+  .nav-links {
     width: 100%;
     height: 100%;
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(5, 1fr);
-    place-content: center;
-    gap: 20px;
-    padding: 0 var(--gap-sm);
+    place-content: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--gap-md);
+    padding: 0 var(--gap-md);
     text-align: center;
+
   }
+}
 
   .nav-links a {
-    font-size: clamp(var(--font-size-sm), 1vw, var(--font-size-md));
+    font-size: clamp(var(--font-size-sm), 1.5vw, var(--font-size-md));
     text-decoration: none;
-    border-radius: 8px;
-  }
+    border-bottom: 1px solid var(--nav-fg);
+
 
   .nav-links a:hover,
   .nav-links a:active {
     color: var(--nav-fg);
+  }
+
+}
+
+  .services-section {
+    padding-top: 0;
   }
 
   .services-cards {
@@ -700,7 +712,7 @@
 
   .service-card {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: minmax(150px, 1fr) 2fr;
     gap: var(--gap-lg);
   }
 
@@ -728,11 +740,10 @@
     right: -15%;
     width: 50%;
     aspect-ratio: 1/1;
-    border: 10px solid var(--bg);
-    background-color: var(--primary);
-    background: var(--shadow-sm) url('./assets/img/MkLogo.png') no-repeat center
+    border: 10px solid var(--bg-gradient);
+    background: var(--glass-card-border) url('./assets/img/MkLogoNoBg.png') no-repeat center
       center;
-    background-size: cover;
+    background-size: 50px auto;
     border-radius: 5px;
   }
 
@@ -847,25 +858,23 @@
     justify-content: center;
     gap: var(--gap-xl);
     min-height: 100dvh;
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--gap-xl);
+    }
   }
 
-  .about-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap-lg);
-    text-align: center;
-    padding: 3rem;
-    background: var(--glass-card-bg);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
+
 
     .cta-buttons {
       display: flex;
       gap: var(--gap-lg);
     }
-  }
+
 
   footer {
     position: relative;
@@ -1115,6 +1124,13 @@
 
     .footer-logo {
       margin: 0 auto var(--gap-md) auto;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .service-card {
+      grid-template-columns: minmax(100px, 1fr);
+      gap: var(--gap-xl);
     }
   }
 
