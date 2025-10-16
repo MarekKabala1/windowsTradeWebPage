@@ -7,8 +7,8 @@ export default function About() {
           A Decade of Precision: Your Trusted Partner for Windows and Doors
         </h2>
       </div>
-      <div className="about-content">
-        <div className="about-card">
+      <div className="about-content ">
+        <div className="about-card card">
           <div className="card-icon">🏆</div>
           <h3>Premier Specialists</h3>
           <p>
@@ -18,7 +18,7 @@ export default function About() {
             materials essential to modern and traditional building design.
           </p>
         </div>
-        <div className="about-card">
+        <div className="about-card card">
           <div className="card-icon">⚙️</div>
           <h3>Expert Materials Handling</h3>
           <p>
@@ -29,7 +29,7 @@ export default function About() {
             and a flawless aesthetic finish that enhances your property's value.
           </p>
         </div>
-        <div className="about-card featured">
+        <div className="about-card featured card">
           <div className="card-icon">🔧</div>
           <h3>The Repair Difference: Prioritizing Original Quality</h3>
           <p>
@@ -43,7 +43,7 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className="about-cta">
+      <div className="about-cta card">
         <p className="cta-text">
           Whether you're looking to upgrade to modern, secure doors or need a
           precise, durable repair for a favorite window, rely on the proven
