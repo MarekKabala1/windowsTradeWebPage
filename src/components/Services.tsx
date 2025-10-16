@@ -42,7 +42,13 @@ export default function Services({
         {items?.map((item, index) => (
           <div className="service-card" key={index}>
             <div className="service-image">
-              <img src={item.imageUrl} alt={item.header} />
+              <img
+                src={item.imageUrl}
+                alt={item.header}
+                loading="lazy"
+                width={300}
+                height={300}
+              />
             </div>
             <div className="service-content">
               <h3 className="service-header">{item.header}</h3>
