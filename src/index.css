@@ -68,7 +68,7 @@
     --glass-bg: rgba(255, 255, 255, 0.3);
     --glass-shadow: rgba(71, 123, 201, 1);
     --glass-card-bg: rgba(167, 191, 231, 1);
-    --glass-card-border: rgba(213, 222, 225, 0.2);
+    --glass-card-border: rgba(213, 222, 225, 0.5);
     --glass-text-shadow: rgba(187, 184, 184, 0.5);
 
     --glass-bg-dark: rgba(51, 65, 85, 0.3);
@@ -670,14 +670,11 @@
     .nav-links {
       width: 100%;
       height: 100%;
-      /* display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    place-content: center; */
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: var(--gap-md);
+      gap: var(--gap-xl);
       padding: 0 var(--gap-md);
       text-align: center;
     }
@@ -862,11 +859,41 @@
       justify-content: center;
       gap: var(--gap-xl);
     }
+
+    .about-cta{
+     align-items: center;
+    }
   }
 
   .cta-buttons {
     display: flex;
     gap: var(--gap-lg);
+  }
+
+  @supports (animation-timeline: view()) {
+    .revealing-card {
+      view-timeline-name: --reveal-card;
+      view-timeline-axis: block;
+      animation-timeline: --reveal-card;
+      animation-range: entry 25% cover 50%;
+    }
+  }
+  .revealing-card {
+    animation: linear revealCard both;
+    view-timeline-axis: block;
+    animation-timeline: --reveal-card;
+    animation-range: entry 25% cover 50%;
+  }
+
+  @keyframes revealCard {
+    from {
+      opacity: 0;
+      clip-path: inset(0% 100% 100% 0%);
+    }
+    to {
+      opacity: 1;
+      clip-path: inset(0% 0% 0% 0%);
+    }
   }
 
   footer {
@@ -1075,10 +1102,30 @@
     .service-image::after {
       border: 10px solid var(--bg-gradient-dark);
     }
+
+    .service-image::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 60%;
+      right: -15%;
+      width: 50%;
+      aspect-ratio: 1/1;
+      background: var(--glass-card-border) url('./assets/img/MkLogoLight.png')
+        no-repeat center center;
+      background-size: 50px auto;
+      border-radius: 5px;
+    }
   }
 }
 
 @layer responsive {
+
+  @media (max-width: 870px) {
+    .nav-links{
+      gap: var(--gap-md);
+    }
+  }
   @media (max-width: 800px) {
     .glass-door-background_left {
       padding: 0;
