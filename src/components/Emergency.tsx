@@ -1,11 +1,16 @@
 import mkLogo from '../assets/img/MkLogoNoBg.png';
+import mkLogoLight from '../assets/img/MkLogoLight.png';
 
 export default function Emergency() {
   return (
-    <section className="hero-emergency">
+    <section id="emergency" className="hero-emergency">
       <nav className="nav-emergency">
         <div className="logo">
-          <img src={mkLogo} alt="Logo" width={100} height={100} />
+          <picture>
+            <source srcSet={mkLogo} media="(prefers-color-scheme: light)" />
+            <source srcSet={mkLogoLight} media="(prefers-color-scheme: dark)" />
+            <img src={mkLogo} alt="Mk Logo" width={80} height={100} />
+          </picture>
         </div>
         {/* <div className="emergency-badge">🚨 24/7 AVAILABLE</div> */}
         <ul className="nav-links">

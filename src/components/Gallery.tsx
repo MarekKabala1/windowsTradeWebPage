@@ -3,6 +3,7 @@ import bifoldImage from '../assets/img/bifold.png';
 import windowImage from '../assets/img/window.png';
 import doorImage from '../assets/img/door.png';
 import mkLogo from '../assets/img/MkLogoNoBg.png';
+import mkLogoLight from '../assets/img/MkLogoLight.png';
 
 type GalleryItems = {
   imageUrl?: string;
@@ -65,13 +66,23 @@ export default function Gallery({
               ))}
               <div className="gallery-subitems">
                 <div className="gallery-subitem-text"></div>
-                <img
-                  src={mkLogo}
-                  alt="Logo"
-                  width="400"
-                  height="400"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcSet={mkLogo}
+                    media="(prefers-color-scheme: light)"
+                  />
+                  <source
+                    srcSet={mkLogoLight}
+                    media="(prefers-color-scheme: dark)"
+                  />
+                  <img
+                    src={mkLogoLight}
+                    alt="Logo"
+                    width="400"
+                    height="400"
+                    loading="lazy"
+                  />
+                </picture>
               </div>
             </div>
           </div>

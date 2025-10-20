@@ -1,13 +1,18 @@
 import mkLogo from '../assets/img/MkLogoNoBg.png';
+import mkLogoLight from '../assets/img/MkLogoLight.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer>
+    <footer id="contact">
       <nav className="footer-nav-container">
         <div className="footer-logo logo">
-          <img src={mkLogo} alt="Logo" />
+          <picture>
+            <source srcSet={mkLogo} media="(prefers-color-scheme: light)" />
+            <source srcSet={mkLogoLight} media="(prefers-color-scheme: dark)" />
+            <img src={mkLogo} alt="Logo" />
+          </picture>
         </div>
         <div className="nav1 ">
           <h3>

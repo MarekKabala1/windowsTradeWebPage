@@ -37,7 +37,7 @@ export default function Services({
   items = DEFAULT_SERVICES_ITEMS,
 }: ServicesProps) {
   return (
-    <section className="services-section">
+    <section id="services" className="services-section">
       <div className="services-cards">
         {items?.map((item, index) => (
           <div className="service-card" key={index}>
